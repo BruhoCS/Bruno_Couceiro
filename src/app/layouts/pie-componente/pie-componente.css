@@ -1,0 +1,27 @@
+.general-pie{
+    background-color: #0A0A0A;
+    color: #F5F5F7;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    text-align: center;
+    gap: 1.5rem;
+}
+
+.contacto-pie{
+    display: flex;
+    flex-direction: column;
+}
+
+.navegación-pie{
+    display:flex;
+    flex-direction: column;
+}
+
+/*En movil las columnas se apilan para mantener una lectura comoda*/
+@media (max-width: 700px){
+    .general-pie{
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+}

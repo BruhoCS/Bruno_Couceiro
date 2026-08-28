@@ -1,0 +1,278 @@
+/* Pagina completa de proyectos: centra el contenido con un maximo de ancho para que no se estire en pantallas grandes */
+.pagina-proyectos{
+    background-color: var(--bg);
+    padding: 5rem 1.5rem 6rem;
+    min-height: 100vh;
+    max-width: var(--max-w, 1100px);
+    margin: 0 auto;
+}
+
+/* Boton "Sobre mi": enlace discreto arriba a la derecha, con borde sutil y esquinas redondeadas */
+.enlace-sobre-mi{
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    padding: 0.5rem 1.2rem;
+    border: 1.5px solid var(--border);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+/* Efecto hover del boton "Sobre mi": el borde y el texto se iluminan para indicar interactividad */
+.enlace-sobre-mi:hover{
+    border-color: var(--text);
+}
+
+
+/* Cabecera de la pagina con el titulo principal y el subtitulo */
+.cabecera-proyectos{
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 4rem;
+}
+
+/* Titulo principal "Proyectos" en grande */
+.cabecera-proyectos h1{
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* Subtitulo: describe de que trata la seccion en tono secundario */
+.cabecera-proyectos p{
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--muted);
+}
+
+/* Cada bloque de proyectos: margen inferior para separar las dos secciones */
+.seccion{
+    margin-bottom: 5rem;
+}
+
+/* Titulo de cada seccion ("En producción" / "Experiencia profesional") */
+.titulo-seccion{
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Grid de las cards de proyectos en produccion: se adapta de 1 a 3 columnas segun pantalla */
+.grid-proyectos{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px){
+    .grid-proyectos{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Card individual de un proyecto en produccion: fondo de superficie, borde sutil y esquinas redondeadas */
+.card-proyecto{
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius, 16px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Efecto hover: la card se levanta ligeramente y su borde se ilumina */
+.card-proyecto:hover{
+    transform: translateY(-6px);
+    border-color: var(--text);
+}
+
+/* Zona de la imagen del proyecto: placeholder de fondo que se puede sustituir por un screenshot */
+.imagen-proyecto{
+    height: 180px;
+    background-color: #1f1f1f;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+/*Las capturas ocupan toda la zona de imagen sin deformarse*/
+.imagen-proyecto img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Contenido textual de la card debajo de la imagen */
+.contenido-proyecto{
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    flex: 1;
+}
+
+/* Badge "En producción": acento verde contenido, tal como indica la paleta oficial */
+.badge-produccion{
+    display: block;
+    align-self: stretch;
+    width: calc(100% + 3rem);
+    background-color: rgba(48, 209, 88, 0.15);
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.6rem 1rem;
+    margin: -1.5rem -1.5rem 0;
+    border-radius: 0;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Nombre del proyecto */
+.contenido-proyecto h3{
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Descripcion del proyecto en tono secundario */
+.contenido-proyecto p{
+    font-size: 0.95rem;
+    color: var(--muted);
+    flex: 1;
+}
+
+/*Destacamos las palabras clave para facilitar el escaneo de cada tarjeta*/
+.contenido-proyecto p strong,
+.card-experiencia p strong{
+    color: var(--text);
+    font-weight: 600;
+}
+
+/*Caso desplegable para consultar el contexto sin abultar la tarjeta inicial*/
+.caso-estudio{
+    width: 100%;
+    border-top: 1px solid var(--border);
+    padding-top: 0.75rem;
+}
+
+.caso-estudio summary{
+    color: var(--accent);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    list-style-position: inside;
+}
+
+.caso-estudio summary:focus-visible{
+    outline: 3px solid rgba(255, 255, 255, 0.7);
+    outline-offset: 3px;
+}
+
+/*Contenido del caso de estudio, organizado para facilitar el escaneo*/
+.contenido-caso{
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding-top: 1rem;
+}
+
+.contenido-caso h4{
+    color: var(--text);
+    font-size: 0.9rem;
+    margin: 0.65rem 0 0;
+}
+
+.contenido-caso p{
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Enlace "Visitar sitio": acento verde, se muestra siempre como link de accion */
+.enlace-proyecto{
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Efecto hover del enlace: subrayado sutil para indicar interactividad */
+.enlace-proyecto:hover{
+    text-decoration: underline;
+}
+
+/* Grid de las cards de experiencia profesional: misma adaptacion de columnas */
+.grid-experiencia{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px){
+    .grid-experiencia{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Card de experiencia profesional: contenedor vertical sin imagen, solo informacion */
+.card-experiencia{
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius, 16px);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Efecto hover de la card de experiencia: misma elevacion sutil */
+.card-experiencia:hover{
+    transform: translateY(-6px);
+    border-color: var(--text);
+}
+
+/* Badge de la tecnologia usada: gris secundario para diferenciarlo del verde de produccion */
+.badge-stack{
+    align-self: flex-start;
+    background-color: var(--border);
+    color: var(--text);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Titulo del proyecto de experiencia */
+.card-experiencia h3{
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/*Las tecnologias se muestran como un banner superior dentro de cada tarjeta*/
+.card-experiencia .badge-stack{
+    display: block;
+    align-self: stretch;
+    width: calc(100% + 3rem);
+    margin: -2rem -1.5rem 0;
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius, 16px) var(--radius, 16px) 0 0;
+    text-align: center;
+}
+
+/* Descripcion del proyecto de experiencia en tono secundario */
+.card-experiencia p{
+    font-size: 0.95rem;
+    color: var(--muted);
+    flex: 1;
+}
+
+/* Nota aclaratoria de que el proyecto es interno de la empresa (no publico) */
+.nota-privado{
+    font-size: 0.8rem;
+    color: var(--muted);
+}

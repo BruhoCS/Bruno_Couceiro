@@ -1,0 +1,136 @@
+/*Estilos generales*/
+.general-inicio{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    width: 100%;
+}
+
+.saludo{    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    min-height: 100vh;
+    position: sticky;
+    top: 0;
+    transition: opacity 0.2s ease;
+    z-index: 1;
+    font-family: 'Gallaecia';
+}
+/*Tipografia principal del saludo*/
+.saludo h1{
+    font-size: clamp(3.5rem, 9vw, 6.5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin: 0;
+}
+
+/*Texto pequeno que introduce el nombre*/
+.saludo .eyebrow{
+    font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+    font-weight: 500;
+    color: var(--muted);
+    margin: 0;
+}
+
+/*Rol y experiencia principal para que se entiendan sin hacer scroll*/
+.saludo .rol{
+    font-family: inherit;
+    font-size: clamp(1.1rem, 2.5vw, 1.7rem);
+    font-weight: 500;
+    color: var(--text);
+    margin: 0;
+}
+
+/*Propuesta de valor visible desde el primer bloque de la pagina*/
+.saludo .propuesta-valor{
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 400;
+    color: var(--muted);
+    line-height: 1.5;
+    max-width: 700px;
+    margin: 0;
+}
+
+/*Botones*/
+.botones-general{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 5vh;
+}
+
+.botones-general a{
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0.85rem 1.9rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+/*Estado de foco visible para poder navegar con teclado*/
+.botones-general a:focus-visible{
+    outline: 3px solid rgba(255, 255, 255, 0.7);
+    outline-offset: 3px;
+}
+
+/*Reducimos el movimiento si el usuario lo ha desactivado en su sistema*/
+@media (prefers-reduced-motion: reduce){
+    .saludo,
+    .eleccion,
+    .botones-general a{
+        transition: none;
+    }
+    
+}
+
+/* Boton CV - acento verde (CTA principal) */
+#boton-cv{
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+
+    background-color: var(--accent);
+    color: var(--bg);
+    border: none;
+}
+
+#boton-cv:hover{
+    background-color: #28b84c;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(48, 209, 88, 0.35);
+}
+
+#boton-cv:active{
+    transform: translateY(0) scale(0.97);
+    box-shadow: 0 4px 14px rgba(48, 209, 88, 0.30);
+}
+
+/* Boton Ver trabajo - outline sutil */
+#boton-trabajo{
+    background-color: transparent;
+    color: var(--text);
+    border: 1.5px solid var(--border);
+}
+
+#boton-trabajo:hover{
+    border-color: var(--text);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(245, 245, 247, 0.08);
+}
+
+#boton-trabajo:active{
+    transform: translateY(0) scale(0.97);
+    box-shadow: 0 4px 14px rgba(245, 245, 247, 0.05);
+}

@@ -1,0 +1,88 @@
+/*Cabecera comun para que todas las paginas tengan la misma navegacion*/
+.cabecera-navegacion{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(10, 10, 10, 0.94);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+}
+
+/*Contenedor centrado de la navegacion*/
+.navegacion{
+    display: flex;
+    align-items: center;
+    width: min(100% - 2rem, 980px);
+    min-height: 3.5rem;
+    margin: 0 auto;
+}
+
+/*Enlaces principales y acciones de contacto*/
+.enlaces-navegacion{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 2rem;
+}
+
+.enlaces-navegacion a{
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.enlaces-navegacion a:hover,
+.enlaces-navegacion a:focus-visible{
+    color: var(--text);
+}
+
+/*Indicador de la pagina en la que se encuentra el usuario*/
+.enlaces-navegacion a.enlace-activo{
+    position: relative;
+    color: var(--accent);
+}
+
+.enlaces-navegacion a.enlace-activo::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -0.45rem;
+    left: 0;
+    height: 2px;
+    background-color: var(--accent);
+    border-radius: 999px;
+}
+
+/*Boton de descarga del CV siempre disponible en la cabecera*/
+.enlaces-navegacion .enlace-cv{
+    color: var(--bg);
+    background-color: var(--accent);
+    padding: 0.55rem 1rem;
+    border-radius: 999px;
+}
+
+.enlaces-navegacion .enlace-cv:hover,
+.enlaces-navegacion .enlace-cv:focus-visible{
+    color: var(--bg);
+    background-color: #28b84c;
+}
+
+/*En pantallas pequenas la cabecera se apila para evitar que los enlaces se corten*/
+@media (max-width: 700px){
+    .navegacion{
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 0.75rem 0;
+    }
+
+    .enlaces-navegacion{
+        justify-content: flex-start;
+        gap: 0.8rem 1rem;
+    }
+}
