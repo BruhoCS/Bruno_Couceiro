@@ -74,6 +74,11 @@
 
 /*En pantallas pequenas la cabecera se apila para evitar que los enlaces se corten*/
 @media (max-width: 700px){
+    /*En movil la cabecera acompana al contenido y desaparece al hacer scroll*/
+    .cabecera-navegacion{
+        position: static;
+    }
+
     .navegacion{
         align-items: flex-start;
         flex-direction: column;
@@ -84,5 +89,10 @@
     .enlaces-navegacion{
         justify-content: flex-start;
         gap: 0.8rem 1rem;
+    }
+
+    /*El CV sigue disponible desde el contenido, pero no ocupa espacio en el nav movil*/
+    .enlaces-navegacion .enlace-cv{
+        display: none;
     }
 }

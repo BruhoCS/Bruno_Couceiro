@@ -14,6 +14,6 @@ app-componentes-generales {
 /*La cabecera se mantiene fija y el contenido deja espacio para no quedar oculto*/
 @media (max-width: 700px) {
   app-componentes-generales {
-    padding-top: 7rem;
+    padding-top: 0;
   }
 }
