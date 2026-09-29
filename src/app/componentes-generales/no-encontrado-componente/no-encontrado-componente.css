@@ -1,0 +1,76 @@
+/* Pagina de error centrada en pantalla, con la misma estetica que el inicio */
+.pagina-no-encontrada{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    min-height: 80vh;
+    padding: 4rem 1.5rem;
+    text-align: center;
+}
+
+/* El codigo de error usa la tipografia del nombre para mantener la identidad */
+.codigo{
+    font-family: 'Gallaecia';
+    font-size: clamp(4rem, 12vw, 7rem);
+    color: var(--text);
+    line-height: 1;
+    margin: 0;
+}
+
+.pagina-no-encontrada h1{
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 700;
+}
+
+.descripcion{
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    max-width: 480px;
+}
+
+/* Botones con el mismo estilo que los del inicio: verde principal y outline secundario */
+.botones-no-encontrada{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.botones-no-encontrada a{
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0.85rem 1.9rem;
+    border-radius: 999px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#boton-inicio{
+    background-color: var(--accent);
+    color: var(--bg);
+}
+
+#boton-inicio:hover{
+    background-color: #28b84c;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(48, 209, 88, 0.35);
+}
+
+#boton-proyectos{
+    color: var(--text);
+    border: 1.5px solid var(--border);
+}
+
+#boton-proyectos:hover{
+    border-color: var(--text);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(245, 245, 247, 0.08);
+}
+
+@media (prefers-reduced-motion: reduce){
+    .botones-no-encontrada a{
+        transition: none;
+    }
+}

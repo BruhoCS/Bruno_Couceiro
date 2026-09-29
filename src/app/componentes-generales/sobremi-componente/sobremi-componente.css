@@ -100,11 +100,17 @@
     text-align: center;
 }
 
-/* Cada item de formacion */
+/* Cada item de formacion: el puesto en blanco y el resto (empresa, modalidad, fechas) en gris */
 .lista-formacion p{
     font-size: 1.05rem;
-    color: var(--text);
+    color: var(--muted);
+    line-height: 1.5;
     margin: 0;
+}
+
+.lista-formacion p strong{
+    color: var(--text);
+    font-weight: 600;
 }
 
 /* Contenedor de los botones de conversion al final de la pagina */

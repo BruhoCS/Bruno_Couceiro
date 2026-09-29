@@ -216,6 +216,14 @@
     }
 }
 
+/* Empresa, modalidad y fechas de la experiencia, bajo el titulo de la seccion */
+.subtitulo-seccion{
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin: -1.25rem 0 2rem;
+}
+
 /* Card de experiencia profesional: contenedor vertical sin imagen, solo informacion */
 .card-experiencia{
     background-color: var(--surface);
